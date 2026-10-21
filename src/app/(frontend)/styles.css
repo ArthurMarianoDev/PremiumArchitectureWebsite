@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+}
+
+::selection {
+  background: #c5b49c;
+  color: #202020;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-shell {
+  width: min(100% - 2.5rem, 1600px);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-size: .68rem;
+  line-height: 1.2;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-link {
+  position: relative;
+  font-size: .68rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgb(245 242 235 / .72);
+  transition: color .25s ease;
+}
+
+.nav-link:hover {
+  color: #f5f2eb;
+}
+
+.link-arrow {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: .45rem;
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.link-arrow span {
+  transition: transform .25s ease;
+}
+
+.link-arrow:hover span {
+  transform: translate(3px, -3px);
+}
+
+.field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgb(32 32 32 / .28);
+  background: transparent;
+  padding: .9rem 0;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.field:focus {
+  border-color: #202020;
+}
+
+.legal-copy h2 {
+  margin-top: 2.5rem;
+  font-family: var(--font-serif), serif;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.legal-copy h2:first-child {
+  margin-top: 0;
+}
+
+.legal-copy p {
+  margin-top: 1rem;
+  color: rgb(32 32 32 / .62);
+  line-height: 1.8;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main > section {
+  animation: rise .75s ease both;
+}
+
+@media (min-width: 768px) {
+  .page-shell { width: min(100% - 5rem, 1600px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+.figma-custom-code-fragment {
+  display: contents;
+}
+
+.figma-bypass-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  transform: translateY(-150%);
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  padding: 8px 12px;
+  font: 600 14px/1.2 system-ui, sans-serif;
+  text-decoration: none;
+}
+
+.figma-bypass-link:focus {
+  transform: translateY(0);
+}
